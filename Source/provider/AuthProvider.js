@@ -9,10 +9,10 @@ const AuthProvider = (props) => {
   return (
     <AuthContext.Provider
       value={{
-        CurrentUser: CurrentUser,
-        setCurrentUser: setCurrentUser,
-        IsLoggedIn: IsLoggedIn,
-        setIsLoggedIn: setIsLoggedIn,
+        CurrentUser,
+        setCurrentUser,
+        IsLoggedIn,
+        setIsLoggedIn,
       }}
     >
       {props.children}
