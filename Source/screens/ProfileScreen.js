@@ -13,21 +13,28 @@ const ProfileScreenActivity = (props) => {
                     <ScreenHeader props={props} ></ScreenHeader>
 
 
-                    <View style={{ justifyContent: "center", marginHorizontal: 125, marginVertical: 40 }}>
+                    <View style={{ justifyContent: "center", marginHorizontal: 125, marginVertical: 40, backgroundColor: "#404040" }}>
                         <ImagePickerExample props={props} />
-
                     </View>
+
+                    <Text style={styles.nameStyle}>     {auth.CurrentUser.name} </Text>
 
                     <PostCard>
                         <View style={{ backgroundColor: "#5730a", height: 250, borderColor: "#003", borderWidth: 2 }}>
 
-                            <Text style={styles.nameSyle}>     {auth.CurrentUser.name} </Text>
+
                             <Text style={styles.profileInfoStyle} >ID: {auth.CurrentUser.sid} </Text>
                             <Text style={styles.profileInfoStyle} >Born on: {auth.CurrentUser.dob} </Text>
                             <Text style={styles.profileInfoStyle}>Works at: {auth.CurrentUser.work}</Text>
                             <Text style={styles.profileInfoStyle} >Address: {auth.CurrentUser.address}</Text>
                         </View>
                     </PostCard>
+
+                    <Button
+                        title="Delete Profile"
+                        color="#000066"
+                        onPress={() => Alert.alert('Button with adjusted color pressed')}
+                    />
 
 
                 </View>
@@ -43,7 +50,7 @@ const styles = StyleSheet.create({
         marginVertical: 15,
     },
 
-    nameSyle: {
+    nameStyle: {
         fontFamily: "serif",
         fontSize: 25,
         color: "black",

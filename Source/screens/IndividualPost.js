@@ -34,8 +34,8 @@ const IndividualPostScreen=(props)=>{
            <Text style={styles.authorTextSTyle}>{authorName}</Text>
             <Text style={styles.dateStyle}>{post.postDate}</Text>
            <Text style={styles.postBodyStyle}>{post.postText}</Text>
-           <AntDesign name="heart" size={24} color="#fc4601"  style={styles.likeStyle} />
-           <FontAwesome name="comment-o" size={27} color="#fc6a03"  style={styles.commentStyle}/>
+           <AntDesign name="like1" size={24} color="#202020"  style={styles.likeStyle} />
+           <FontAwesome name="comment-o" size={27} color="#202020"  style={styles.commentStyle}/>
            <Text style={styles.likeTextStyle} >{likeCount} Likes</Text>
            <Text style={styles.commentTextStyle}>{commentsCount} Comments</Text>
            </PostCard>
@@ -43,17 +43,17 @@ const IndividualPostScreen=(props)=>{
            <Input
               
 
-                inputStyle={{color:"white"}}
+                inputStyle={{color:"#000066"}}
                 placeholder="Write your comment!"
                 multiline={true}
-                placeholderTextColor="white"
+                placeholderTextColor="black"
                 inputContainerStyle={styles.inputStyle}
-                leftIcon={<Entypo name="pencil" size={24} color="white" />}
+                leftIcon={<Entypo name="pencil" size={24} color="#202020" />}
                 onChangeText={function (currentInput) {
                    setCurrentInputText(currentInput)
                 }}
               />
-             <AntDesign name="checkcircle" size={30} color="#fc6a03" style={{marginHorizontal:180,marginBottom:20}}
+             <AntDesign name="checksquare" size={30} color="#202020" style={{marginHorizontal:180,marginBottom:20}}
              onPress={function(){
                 let authorPostCurrentReaction={postId:post.key,reactor:currentUser,status:"comment",commentBody:currentInputText}
                 authorPostReactions.push(authorPostCurrentReaction)
@@ -91,7 +91,8 @@ const styles=StyleSheet.create({
         fontFamily:'serif',
         fontSize:23,
         color:"black",
-        marginBottom:5
+        marginBottom:5,
+        fontWeight: 'bold'
     },
     dateStyle:{
         marginBottom:5,
@@ -103,7 +104,7 @@ const styles=StyleSheet.create({
     postBodyStyle:{
         fontFamily:'serif',
         marginBottom:10,
-        color:"black",
+        color:"#C0C0C0",
         fontSize:19,
         
     },
@@ -115,8 +116,8 @@ const styles=StyleSheet.create({
         marginTop:10,
     },
     containerStyle:{
-        flex:1
-        , 
+        flex:1,
+        backgroundColor: "#C0C0C0" 
     },
     likeTextStyle:{
         marginBottom:3,

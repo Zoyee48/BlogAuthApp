@@ -3,7 +3,6 @@ import {View,Button,Flatlist,Text,ActivityIndicator,StyleSheet,TouchableOpacity}
 import { AsyncStorage } from 'react-native';
 import {PostCard} from '../shareable/customCard'
 import { getDataJSON, storeDataJSON } from "../Function/AsyncStorageFunction";
-import { Zocial } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons'; 
 
@@ -17,7 +16,7 @@ const PostList =(props)=>{
   
 
     const [Name, setName] = useState("");
-    const [iconName,setIconName]=useState("hearto")
+    const [iconName,setIconName]=useState("like1")
     const [loading, setLoading] = useState(false);
     const [likeCount,setLikeCount]=useState(0)
     const [commentCount,setCommentCount]=useState(0)
@@ -65,9 +64,9 @@ const PostList =(props)=>{
            }}/>
 
           
-           <AntDesign name={iconName} size={24} color="red"  style={styles.likeStyle} 
+           <AntDesign name={iconName} size={24} color="black"  style={styles.likeStyle} 
            onPress ={function(){
-            setIconName("heart")
+            setIconName("like1")
             let a=likeCount+1
             let authorPostCurrentReaction={postId:posts.key,reactor:currUser,status:"like"}
             authorPostReactions.push(authorPostCurrentReaction)

@@ -1,8 +1,7 @@
 import React , { useState, useEffect }  from 'react'
 import {View,Button,Flatlist,Text,ActivityIndicator,StyleSheet,TouchableOpacity} from 'react-native'
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import {NotificationCard} from '../shareable/customCard'
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome, AntDesign} from '@expo/vector-icons';
 
 
 
@@ -32,7 +31,7 @@ const NotificationList=(props)=>{
         <View>
             <NotificationCard>
             <Text style={{width:60}}>  </Text>
-            <FontAwesome name={iconName} size={20} color="red"  />
+            <FontAwesome name={iconName} size={20} color="black"  />
                 <Text style={styles.commenter}> {notification.reactor.name} </Text>
                 <Text> </Text>
                 <Text style = {styles.stateMentStyle}>{statement} </Text>
@@ -49,7 +48,7 @@ const styles= StyleSheet.create({
         marginTop:20,
         left:150,
         fontFamily:'serif',
-        color:"white",
+        color:"black",
         position:"absolute"
        
 
@@ -67,8 +66,9 @@ const styles= StyleSheet.create({
         marginTop:16,
         left:27,
         fontFamily:'serif',
-        color:"white" ,
-        position:"absolute"
+        color:"black" ,
+        position:"absolute",
+        fontWeight: 'bold'
     }
   
 
